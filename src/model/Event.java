@@ -7,7 +7,7 @@ public class Event  {
 	//----------Fields----------
 	private String  eventId;//イベントID(一意)
 	private String eventName;//イベントの名前
-	private ArrayList<String> organizarName;//幹事の名前
+	private String organizarName;//幹事の名前
 	private ArrayList <String> eventVenue;//イベントの場所
 	private Calendar  registDay;//投稿日時
 	private String autherName;//イベント製作者の名前
@@ -24,7 +24,7 @@ public class Event  {
 	static int eventCounter=0;
 
 	//----------Constructor----------
-	public Event(String eventName, ArrayList<String> organizarName, ArrayList<String> eventVenue,
+	public Event(String eventName, String organizarName, ArrayList<String> eventVenue,
 			Calendar registDay, String autherName, String autherPass, Calendar deadlineDay,
 			ArrayList<String> autherRemark, Calendar determinedDay, int determinedFlag, int eventOpenFlga,
 			String numberOfEvent, String eventUrl, String eventPageFileName, ArrayList<String> pricePerPerson) {
@@ -33,17 +33,17 @@ public class Event  {
 		this.eventName = eventName;
 		this.organizarName = organizarName;
 		this.eventVenue = eventVenue;
-		this.registDay = registDay;
+		this.registDay = Calendar.getInstance();
 		this.autherName = autherName;
 		this.autherPass = autherPass;
 		this.deadlineDay = deadlineDay;
 		this.autherRemark = autherRemark;
-		this.determinedDay = determinedDay;
-		this.determinedFlag = determinedFlag;
+		this.determinedDay = Calendar.getInstance();;
+		this.determinedFlag = 0;
 		this.eventOpenFlga = eventOpenFlga;
 		this.numberOfEvent = numberOfEvent;
-		this.eventUrl = eventUrl;
-		this.eventPageFileName = eventPageFileName;
+		this.eventUrl = "undefined";
+		this.eventPageFileName = "undefined";
 		this.pricePerPerson = pricePerPerson;
 		eventCounter++;
 	}
@@ -57,11 +57,11 @@ public class Event  {
 		this.eventId = eventId;
 	}
 
-	public ArrayList<String> getOrganizarName() {
+	public String getOrganizarName() {
 		return organizarName;
 	}
 
-	public void setOrganizarName(ArrayList<String> organizarName) {
+	public void setOrganizarName(String organizarName) {
 		this.organizarName = organizarName;
 	}
 
