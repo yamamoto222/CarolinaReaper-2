@@ -14,14 +14,16 @@ public class Test {
 		ArrayList<String> list= new ArrayList<String> ();
 		list.add(str);
 
-		Event testEvent =  new Event(str,list,list,a,
+		Event testEvent =  new Event(str,str,list,a,
 									str,str,b,list,
 									a,2,3,str,
 									str,str,list);
-		
-		testEvent.setDeadlineDate(25);
-		System.out.println(testEvent.getDeadlineDate());
-	//	System.out.println(a.);
-		
+
+	//	testEvent.setDeadlineDate(25);
+	//	System.out.println(testEvent.getDeadlineDate());
+testEvent.get
+		for(int i=0;i<100;i++) {
+		//	System.out.println(CreateAndAnnihilateEventPage.createEventPageFileName(String.valueOf(i)));
+		}
 	}
 }

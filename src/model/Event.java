@@ -16,13 +16,14 @@ public class Event  {
     private ArrayList <String> autherRemark;//イベント製作者の備考欄
 	private Calendar determinedDay ;//確定日時
 	private int determinedFlag;//イベント確定のフラグ 1:確定,0:未確定
-	private int eventOpenFlga;//イベントの公開フラグ.1:公開,0:非公開
+	private int eventOpenFlag;//イベントの公開フラグ.1:公開,0:非公開
 	private String numberOfEvent;//イベント会数
 	private String eventUrl;//イベントページのURL
 	private String eventPageFileName;//イベントページファイルの名前
 	private ArrayList<String> pricePerPerson;//イベント一人当たりの料金
 	private ArrayList<Calendar> candidate ; //イベント候補日の集合
 	static int eventCounter=0;
+	static String masterKey = "password";//管理者用のパスワード
 
 	//----------Constructor----------
 	public Event(String eventName, String organizarName, ArrayList<String> eventVenue,
@@ -42,7 +43,7 @@ public class Event  {
 		this.autherRemark = autherRemark;
 		this.determinedDay = Calendar.getInstance();
 		this.determinedFlag = 0;
-		this.eventOpenFlga = eventOpenFlga;
+		this.eventOpenFlag = eventOpenFlga;
 		this.numberOfEvent = numberOfEvent;
 		this.eventUrl = "undefined";
 		this.eventPageFileName = "undefined";
@@ -280,11 +281,11 @@ public class Event  {
 	}
 
 	public int getEventOpenFlga() {
-		return eventOpenFlga;
+		return eventOpenFlag;
 	}
 
 	public void setEventOpenFlga(int eventOpenFlga) {
-		this.eventOpenFlga = eventOpenFlga;
+		this.eventOpenFlag = eventOpenFlga;
 	}
 
 	public String getNumberOfEvent() {
