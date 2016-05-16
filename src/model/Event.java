@@ -21,13 +21,15 @@ public class Event  {
 	private String eventUrl;//イベントページのURL
 	private String eventPageFileName;//イベントページファイルの名前
 	private ArrayList<String> pricePerPerson;//イベント一人当たりの料金
+	private ArrayList<Calendar> candidate ; //イベント候補日の集合
 	static int eventCounter=0;
 
 	//----------Constructor----------
 	public Event(String eventName, String organizarName, ArrayList<String> eventVenue,
 			Calendar registDay, String autherName, String autherPass, Calendar deadlineDay,
 			ArrayList<String> autherRemark, Calendar determinedDay, int determinedFlag, int eventOpenFlga,
-			String numberOfEvent, String eventUrl, String eventPageFileName, ArrayList<String> pricePerPerson) {
+			String numberOfEvent, String eventUrl, String eventPageFileName, ArrayList<String> pricePerPerson,
+			ArrayList<Calendar>candidate) {
 		super();
 		this.eventId = String.valueOf(eventCounter);
 		this.eventName = eventName;
@@ -38,13 +40,14 @@ public class Event  {
 		this.autherPass = autherPass;
 		this.deadlineDay = deadlineDay;
 		this.autherRemark = autherRemark;
-		this.determinedDay = Calendar.getInstance();;
+		this.determinedDay = Calendar.getInstance();
 		this.determinedFlag = 0;
 		this.eventOpenFlga = eventOpenFlga;
 		this.numberOfEvent = numberOfEvent;
 		this.eventUrl = "undefined";
 		this.eventPageFileName = "undefined";
 		this.pricePerPerson = pricePerPerson;
+		this.candidate = candidate;
 		eventCounter++;
 	}
 
@@ -55,6 +58,7 @@ public class Event  {
 
 	public void setEventId(String eventId) {
 		this.eventId = eventId;
+
 	}
 
 	public String getOrganizarName() {
@@ -315,6 +319,24 @@ public class Event  {
 		Event.eventCounter = eventCounter;
 	}
 
+
+
+	public ArrayList<Calendar> getCandidate() {
+		return candidate;
+	}
+
+	public void setCandidate(ArrayList<Calendar> candidate) {
+		this.candidate = candidate;
+	}
+
+	public void addCandidate(Calendar candidate){
+		this.candidate.add(candidate);
+	}
+
+	public Calendar getCandidateElement(int i){ //i番目の要素(Calendar Class)を取り出す
+		return candidate.get(i);
+	}
+
 	//----------instance methods----------
 	public boolean isDeadlineDay(Calendar nowTime){
 		nowTime=Calendar.getInstance();
@@ -325,6 +347,8 @@ public class Event  {
 		if(autherPass == key) return true;
 		else return false;
 	}
+
+
 	//----------static methods----------
 	public static boolean isNotStrEnpty (String str){
 		if(str!= null && str.length() != 0) return true;
