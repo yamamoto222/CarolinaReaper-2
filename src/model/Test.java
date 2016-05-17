@@ -10,7 +10,7 @@ public class Test {
 		Calendar b = a;
 		//b.set(Calendar.YEAR, 2010);
 		//System.out.println(a.getTime());
-		String str ="Fuck you";
+		String str ="a";
 		ArrayList<String> list= new ArrayList<String> ();
 		list.add(str);
 

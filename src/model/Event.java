@@ -373,7 +373,7 @@ public class Event  {
 	}
 
 	public  static int getHour(Calendar cal){
-		return cal.get(Calendar.HOUR);
+		return cal.get(Calendar.HOUR_OF_DAY);
 	}
 
 	public  static int getMinute(Calendar cal){
@@ -385,32 +385,32 @@ public class Event  {
 	}
 
 	public  static void setYear(Calendar cal,int n){
-		if(n>0) cal.set(Calendar.YEAR, n);
+		if(n>=0) cal.set(Calendar.YEAR, n);
 		else cal.set(Calendar.YEAR, Calendar.YEAR);
 	}
 
 	public  static void setMonth(Calendar cal,int n){
-		if(n>0) cal.set(Calendar.MONTH, n);
+		if(n>=0) cal.set(Calendar.MONTH, n);
 		else cal.set(Calendar.MONTH, Calendar.MONTH );
 	}
 
 	public  static void setDate(Calendar cal,int n){
-		if(n>0) cal.set(Calendar.DATE, n);
+		if(n>=0) cal.set(Calendar.DATE, n);
 		else cal.set(Calendar.DATE, Calendar.DATE);
 	}
 
 	public  static void setHour(Calendar cal,int n){
-		if(n>0) cal.set(Calendar.HOUR, n);
-		else cal.set(Calendar.HOUR, Calendar.HOUR);
+		if(n>=0) cal.set(Calendar.HOUR_OF_DAY, n);
+		else cal.set(Calendar.HOUR_OF_DAY, Calendar.HOUR_OF_DAY);
 	}
 
 	public  static void setMinute(Calendar cal,int n){
-		if(n>0) cal.set(Calendar.MINUTE, n);
+		if(n>=0) cal.set(Calendar.MINUTE, n);
 		else cal.set(Calendar.MINUTE, Calendar.MINUTE);
 	}
 
 	public  static void setSecond(Calendar cal,int n){
-		if(n>0) cal.set(Calendar.SECOND, n);
+		if(n>=0) cal.set(Calendar.SECOND, n);
 		else cal.set(Calendar.SECOND, Calendar.SECOND);
 	}
 
