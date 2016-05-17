@@ -33,7 +33,7 @@ public class EventDAO {
 	public static String selectCandidate(int index){
 		return "SELECT EVENTID , CANDIDATE, CANDIDATEID FROM PRICEPERPERSON"+ String.valueOf(index) ;
 	}
-
+	//public static String
 
 
 	public  List<Event> getEventDB(){
